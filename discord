@@ -1,0 +1,10 @@
+#!/bin/bash
+message="$1"
+echo $message
+## format to parse to curl
+## echo Sending message: $message
+msg_content=\"$message\"
+
+## discord webhook
+url='https://discordapp.com/api/webhooks/752357412819959870/rOBewHkf5Mm_vKFfSZudL8nJhJdK9Z8fLvZaO10dy3uf3eH392A19ZrmHPKKvGyPJu4Q'
+curl -H "Content-Type: application/json" -X POST -d "{\"content\": $msg_content}" $url
